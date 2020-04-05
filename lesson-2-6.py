@@ -17,3 +17,27 @@
 # “количество”: [5, 2, 7],
 # “ед”: [“шт.”]
 # }
+count = 1
+db_item = []
+new_item = ''
+db_dict = {}
+while True:
+    name = input('Введите название: ')
+    price = input('Введите цену: ')
+    amount = input('Введите количество: ')
+    unit = input('Введите единицы измерения')
+    db_item.append((count, {'название': name, 'цена': price, 'количество': amount, 'ед': unit}))
+    new_item = input('Добавить ещё? (y/n)')
+    if new_item == 'y' or new_item == 'у':
+        count += 1
+    else:
+        break
+for item, db_keys in db_item:
+    for keys in db_keys:
+        db_items = []
+        db_items.append(db_keys.get(keys))
+        if db_dict.get(keys):
+            db_dict[keys].append(db_items.pop(0))
+        else:
+            db_dict.update({keys: db_items})
+print(db_dict)
