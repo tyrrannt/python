@@ -32,6 +32,7 @@ while True:
         count += 1
     else:
         break
+print("Целевая структура: ", db_item)
 for item, db_keys in db_item:
     for keys in db_keys:
         db_items = []
@@ -40,4 +41,4 @@ for item, db_keys in db_item:
             db_dict[keys].append(db_items.pop(0))
         else:
             db_dict.update({keys: db_items})
-print(db_dict)
+print("Результат аналитики: ", db_dict)
