@@ -15,4 +15,4 @@ def personal_data(**kwargs):
         result += (f"{keys}: {arg}; ")
     return result
 
-print(personal_data(name='Ivan', age=23, birth='11.10.1981'))
+print(personal_data(name='Ivan', surname='Egorov', age=23, birth='11.10.1981', city='Moscow', email='i.egorov@domain.ru', tel='+7 (999) 111-11-11'))
