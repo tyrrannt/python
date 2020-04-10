@@ -19,7 +19,7 @@ def exponentiation(x, y):
         while z > 1:
             exp *= x
             z -= 1
-        return '{:.20f}'.format(1 / exp).rstrip('0') if y < 0 else exp
+        return '{:.15f}'.format(1 / exp).rstrip('0') if y < 0 else exp
     else:
         return 1
 
