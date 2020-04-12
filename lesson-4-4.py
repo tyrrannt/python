@@ -3,3 +3,12 @@
 # Элементы вывести в порядке их следования в исходном списке.
 # Для выполнения задания обязательно использовать генератор.
 
+from random import randrange
+
+my_list = [randrange(i) for i in range(1, 100)]
+print(f"Исходный список = {my_list}")
+end_list = []
+for i in my_list:
+    if my_list.count(i) == 1:
+        end_list.append(i)
+print(f"Итоговый массив = {end_list}")

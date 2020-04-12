@@ -3,3 +3,13 @@
 # Необходимо получить результат вычисления произведения всех элементов списка.
 # Подсказка: использовать функцию reduce().
 
+from functools import reduce
+
+
+def num_list(x, y):
+    return x + y
+
+
+my_list = [i for i in range(100, 1000 + 1, 2)]
+print(my_list)
+print(reduce(num_list, my_list))
