@@ -5,16 +5,13 @@
 
 from itertools import count, cycle
 
-first_step = round(1000)
+
 def generate(first):
-
-    yield count(first, 1)
-
-print(first_step)
-i = 1
-while i < 100:
-    print(generate(first_step))
-    print(cycle(generate(first_step)))
-    i +=1
+    for i in count(first, 1):
+        yield i
 
 
+for i in generate(10):
+    if i > 150:
+        break
+    print(i)

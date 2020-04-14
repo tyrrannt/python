@@ -7,7 +7,7 @@ from functools import reduce
 
 
 def num_list(x, y):
-    return x + y
+    return x * y
 
 
 my_list = [i for i in range(100, 1000 + 1, 2)]
