@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d28a640-81ee-474d-bbab-29306641faf7" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my_text.txt" afterDir="false" />
@@ -350,6 +351,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lesson-5-1.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson-5-1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lesson-5-5.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson-5-5.py" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson-5-1.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson-5-1.py" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -388,8 +393,13 @@
       </list>
     </option>
   </component>
+<<<<<<< Updated upstream
   <component name="RunManager" selected="Python.lesson-5-5">
     <configuration name="lesson-4-1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+  <component name="RunManager" selected="Python.lesson-5-1">
+    <configuration name="lesson-3-6" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> Stashed changes
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -402,8 +412,13 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+<<<<<<< Updated upstream
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lesson-4-1.py" />
       <option name="PARAMETERS" value="4 1 25000 20000" />
+=======
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lesson-3-6.py" />
+      <option name="PARAMETERS" value="" />
+>>>>>>> Stashed changes
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -411,7 +426,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< Updated upstream
     <configuration name="lesson-4-6" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+    <configuration name="lesson-4-1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> Stashed changes
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -424,8 +443,13 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+<<<<<<< Updated upstream
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lesson-4-6.py" />
       <option name="PARAMETERS" value="" />
+=======
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lesson-4-1.py" />
+      <option name="PARAMETERS" value="4 1 25000 20000" />
+>>>>>>> Stashed changes
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -433,7 +457,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< Updated upstream
     <configuration name="lesson-4-7" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+    <configuration name="lesson-4-6" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> Stashed changes
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -446,7 +474,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+<<<<<<< Updated upstream
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lesson-4-7.py" />
+=======
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lesson-4-6.py" />
+>>>>>>> Stashed changes
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -455,7 +487,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< Updated upstream
     <configuration name="lesson-5-1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+    <configuration name="lesson-4-7" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> Stashed changes
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -468,7 +504,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+<<<<<<< Updated upstream
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lesson-5-1.py" />
+=======
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lesson-4-7.py" />
+>>>>>>> Stashed changes
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -477,7 +517,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< Updated upstream
     <configuration name="lesson-5-5" type="PythonConfigurationType" factoryName="Python" temporary="true">
+=======
+    <configuration name="lesson-5-1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+>>>>>>> Stashed changes
       <module name="python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -490,7 +534,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+<<<<<<< Updated upstream
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lesson-5-5.py" />
+=======
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lesson-5-1.py" />
+>>>>>>> Stashed changes
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -500,19 +548,33 @@
       <method v="2" />
     </configuration>
     <list>
+<<<<<<< Updated upstream
+=======
+      <item itemvalue="Python.lesson-3-6" />
+>>>>>>> Stashed changes
       <item itemvalue="Python.lesson-4-1" />
       <item itemvalue="Python.lesson-4-6" />
       <item itemvalue="Python.lesson-4-7" />
       <item itemvalue="Python.lesson-5-1" />
+<<<<<<< Updated upstream
       <item itemvalue="Python.lesson-5-5" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.lesson-5-5" />
+=======
+    </list>
+    <recent_temporary>
+      <list>
+>>>>>>> Stashed changes
         <item itemvalue="Python.lesson-5-1" />
         <item itemvalue="Python.lesson-4-1" />
         <item itemvalue="Python.lesson-4-7" />
         <item itemvalue="Python.lesson-4-6" />
+<<<<<<< Updated upstream
+=======
+        <item itemvalue="Python.lesson-3-6" />
+>>>>>>> Stashed changes
       </list>
     </recent_temporary>
   </component>
@@ -533,7 +595,7 @@
       <workItem from="1586517302389" duration="602000" />
       <workItem from="1586841084360" duration="6018000" />
       <workItem from="1586931687261" duration="601000" />
-      <workItem from="1586934367860" duration="236000" />
+      <workItem from="1586934367860" duration="3345000" />
     </task>
     <servers />
   </component>
@@ -554,6 +616,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+<<<<<<< Updated upstream
     <SUITE FILE_PATH="coverage/python$lesson_1_1.coverage" NAME="lesson-1-1 Coverage Results" MODIFIED="1585847842812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$lesson_1_2.coverage" NAME="lesson-1-2 Coverage Results" MODIFIED="1585867327300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$lesson_1_4.coverage" NAME="lesson-1-4 Coverage Results" MODIFIED="1585865060218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -562,5 +625,17 @@
     <SUITE FILE_PATH="coverage/python$lesson_5_5.coverage" NAME="lesson-5-5 Coverage Results" MODIFIED="1586982228391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$lesson_1_5.coverage" NAME="lesson-1-5 Coverage Results" MODIFIED="1585855613098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$lesson_5_1.coverage" NAME="lesson-5-1 Coverage Results" MODIFIED="1586980377991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+=======
+    <SUITE FILE_PATH="coverage/python$lesson_3_3.coverage" NAME="lesson-3-3 Coverage Results" MODIFIED="1586501343542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$lesson_5_1.coverage" NAME="lesson-5-1 Coverage Results" MODIFIED="1586935219079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$lesson_3_6.coverage" NAME="lesson-3-6 Coverage Results" MODIFIED="1586502849778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$lesson_4_6.coverage" NAME="lesson-4-6 Coverage Results" MODIFIED="1586852226658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$lesson_4_7.coverage" NAME="lesson-4-7 Coverage Results" MODIFIED="1586852316215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$lesson_3_5.coverage" NAME="lesson-3-5 Coverage Results" MODIFIED="1586501166398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$lesson_3_1.coverage" NAME="lesson-3-1 Coverage Results" MODIFIED="1586501311030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$lesson_4_1.coverage" NAME="lesson-4-1 Coverage Results" MODIFIED="1586853170478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$lesson_3_4.coverage" NAME="lesson-3-4 Coverage Results" MODIFIED="1586501425824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$lesson_3_2.coverage" NAME="lesson-3-2 Coverage Results" MODIFIED="1586501277609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+>>>>>>> Stashed changes
   </component>
 </project>
