@@ -9,3 +9,16 @@
 #
 # Пример словаря:
 # {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}
+my_list = {}
+
+with open(r"text_6.txt", "r", encoding='UTF-8') as file_d:
+    for i in file_d:
+        summ = 0
+        i = i.strip(chr(10))
+        keys, value = i.split(':')
+        hours = list(value.split())
+        for i in hours:
+            if i.find('(') > 0:
+                summ += int(i[:i.find('(')])
+        my_list.update({keys: summ})
+print(my_list)

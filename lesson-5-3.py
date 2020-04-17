@@ -8,4 +8,4 @@ with open(r"text_3.txt", "r", encoding="UTF-8") as file_d:
     for i in file_d:
         surname, prise = i.split(" ")
         if float(prise) < 20000:
-            print(f"Мне его жаль ===> {surname}. Понятия не имею как он живет на зп = {prise[:-1]}")
+            print(f"Мне его жаль ===> {surname}. Понятия не имею как он живет на зп = {prise.strip(chr(10))}")
