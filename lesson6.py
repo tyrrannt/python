@@ -225,14 +225,3 @@ class Handle(Stationery):
 
 if __name__ == "__main__":
     print("Модуль для практических заданий 6-го урока")
-    color = {'red': 7, 'yellow': 2, 'green': 10}
-    work_type = ['red', 'yellow', 'green', 'yellow']
-
-
-    def run():
-        for key in cycle(work_type):
-            yield key, color.get(key)
-
-
-    a = run()
-    print(next(a))
