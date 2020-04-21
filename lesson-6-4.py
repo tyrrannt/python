@@ -7,5 +7,18 @@
 # Создайте экземпляры классов, передайте значения атрибутов. Выполните доступ к атрибутам, выведите результат.
 # Выполните вызов методов и также покажите результат.
 
-class Car:
-    pass
+from lesson6 import TownCar, SportCar, PoliceCar, WorkCar
+
+town_car = TownCar('Черный', 'Mercedes-Benz C 200 4M Premium')
+sport_car = SportCar('Красный', 'Lamborghini aventador svj')
+police_car = PoliceCar('Белая', 'Лада Веста')
+work_car = WorkCar('Желтый', 'Тонар-7501')
+
+town_car.go()
+town_car.go()
+town_car.accelerator()
+town_car.car_info()
+town_car.brake()
+town_car.brake()
+town_car.stop()
+town_car.car_info()

@@ -1,16 +1,17 @@
+from itertools import cycle
 from time import sleep
 
 
 # =============== 6.1 ==========================================================================================
 class TrafficLight:
-    _color = {'Красный': 7, 'Желтый': 2, 'Зеленый': 10}
-    __work_type = ['Красный', 'Желтый', 'Зеленый', 'Желтый']
+    _color = {'red': 7, 'yellow': 2, 'green': 10}
+    __work_type = ['red', 'yellow', 'green', 'yellow']
 
     def running(self):
-        while True:
-            for key in self.__work_type:
-                print(key)
-                sleep(self._color.get(key))
+        for key in cycle(self.__work_type):
+            print(key)
+            sleep(self._color.get(key))
+
 
 # =============== 6.2 ===========================================================================================
 class Road:
@@ -88,5 +89,91 @@ class Position(Worker):
         return f"{self.get_full_name()} \nОбщий доход: {654}"
 
 
+# =============== 6.4 ==========================================================================================
+class Car:
+    def __init__(self, car_color, car_name, car_police, car_speed=0, engine=0):
+        self.speed = car_speed
+        self.color = car_color
+        self.name = car_name
+        self.is_police = car_police
+        self.engine = engine
+
+    def go(self):
+        if self.engine == 0:
+            self.engine = 1
+        else:
+            return print(f"Двигатель уже заведен!")
+
+    def stop(self):
+        if self.engine == 1:
+            if self.speed == 0:
+                self.engine = 0
+            else:
+                return print(f"Для остановки автомобиля необходимо остановить движение!")
+        else:
+            return print(f"Двигатель уже выключен!")
+
+    def accelerator(self):
+        if self.engine == 1:
+            self.speed += 10
+            return print(f'Скорость автомобиля {self.name} = {self.speed}')
+        else:
+            return print('Двигатель выключен! Для началадвижения заведите автомобиль.')
+
+    def brake(self):
+        if self.speed >= 10:
+            self.speed -= 10
+            return print(f'Скорость автомобиля {self.name} = {self.speed}')
+        else:
+            return print(f"Автомобиль {self.name} уже остановлен!")
+
+    def turn(self):
+        pass
+
+    def show_speed(self):
+        return self.speed
+
+    def car_info(self):
+        return print(f"Название: {self.name}\nЦвет: {self.color}\nСостояние: {f'Движется. Скорость = {self.speed}' if self.speed > 0 else 'Припаркована'}")
+
+class TownCar(Car):
+    def __init__(self, car_color, car_name, car_police=False, car_speed=0):
+        super().__init__(car_color, car_name, car_police, car_speed=0)
+
+    def show_speed(self):
+        if self.speed <= 60:
+            return print(f"Скорость автомобиля {self.name} равна {self.speed}")
+        else:
+            return print(f"Внимание!!! Превышение скорости автомобиля {self.name} на {self.speed - 60}!!!!")
+
+class SportCar(Car):
+    def __init__(self, car_color, car_name, car_police=False, car_speed=0):
+        super().__init__(car_color, car_name, car_police, car_speed=0)
+    pass
+
+class WorkCar(Car):
+    def __init__(self, car_color, car_name, car_police=False, car_speed=0):
+        super().__init__(car_color, car_name, car_police, car_speed=0)
+
+    def show_speed(self):
+        if self.speed <= 40:
+            return print(f"Скорость автомобиля {self.name} равна {self.speed}")
+        else:
+            return print(f"Внимание!!! Превышение скорости автомобиля {self.name} на {self.speed - 40}!!!!")
+
+class PoliceCar(Car):
+    def __init__(self, car_color, car_name, car_police=True, car_speed=0):
+        super().__init__(car_color, car_name, car_police, car_speed=0)
+    pass
+
+
 if __name__ == "__main__":
     print("Модуль для практических заданий 6-го урока")
+    color = {'red': 7, 'yellow': 2, 'green': 10}
+    work_type = ['red', 'yellow', 'green', 'yellow']
+    def run():
+        for key in cycle(work_type):
+            yield key, color.get(key)
+
+    a = run()
+    print(next(a))
