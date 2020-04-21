@@ -70,6 +70,7 @@ class Road:
 
 # =============== 6.3 ==========================================================================================
 class Worker:
+    _income = {}
 
     def __init__(self, name, surname, position, wage, bonus):
         self.name = name
@@ -81,26 +82,32 @@ class Worker:
 class Position(Worker):
     def __init__(self, name, surname, position, wage, bonus):
         super().__init__(name, surname, position, wage, bonus)
+        super()._income['wage'] = wage
+        super()._income['bonus'] = bonus
 
     def get_full_name(self):
         return f"Фамилия: {self.surname} \nИмя: {self.name}\nДолжность: {self.position}"
 
     def get_total_income(self):
-        return f"{self.get_full_name()} \nОбщий доход: {654}"
+        return f"{self.get_full_name()} \nОбщий доход: {super()._income.get('wage') + super()._income.get('bonus')}"
 
 
 # =============== 6.4 ==========================================================================================
 class Car:
-    def __init__(self, car_color, car_name, car_police, car_speed=0, engine=0):
+    _turn = ''
+
+    def __init__(self, car_color, car_name, max_speed, car_police, car_speed=0, engine=0):
         self.speed = car_speed
         self.color = car_color
         self.name = car_name
         self.is_police = car_police
         self.engine = engine
+        self.mspeed = max_speed
 
     def go(self):
         if self.engine == 0:
             self.engine = 1
+            return print(f"Двигатель заведен!")
         else:
             return print(f"Двигатель уже заведен!")
 
@@ -108,6 +115,7 @@ class Car:
         if self.engine == 1:
             if self.speed == 0:
                 self.engine = 0
+                return print(f"Двигатель выключен!")
             else:
                 return print(f"Для остановки автомобиля необходимо остановить движение!")
         else:
@@ -115,7 +123,11 @@ class Car:
 
     def accelerator(self):
         if self.engine == 1:
-            self.speed += 10
+            if self.speed < int(self.mspeed):
+                self.speed += 10
+                self._turn = ''
+            else:
+                return print(f'Скорость автомобиля {self.speed} км/ч превысила допустимый предел {self.mspeed}')
             return print(f'Скорость автомобиля {self.name} = {self.speed}')
         else:
             return print('Двигатель выключен! Для началадвижения заведите автомобиль.')
@@ -127,18 +139,24 @@ class Car:
         else:
             return print(f"Автомобиль {self.name} уже остановлен!")
 
-    def turn(self):
-        pass
+    def turn(self, car_turn):
+        if self.speed > 0:
+            self._turn = car_turn
+            return print(f"Автомобиль {self.name} повернул на {car_turn}.")
+        else:
+            return print(f"Автомобиль {self.name} на данный момент припаркован. Повороты в таком состоянии недоступны")
 
     def show_speed(self):
         return self.speed
 
     def car_info(self):
-        return print(f"Название: {self.name}\nЦвет: {self.color}\nСостояние: {f'Движется. Скорость = {self.speed}' if self.speed > 0 else 'Припаркована'}")
+        return print(
+            f"Автомобиль: {self.name}\nЦвет: {self.color}\nСостояние: {f'Движется. Скорость = {self.speed}' if self.speed > 0 else 'Припаркована'}\n Тип: {f'Машина полиции ' if self.is_police else 'Гражданский автомобиль'}\n")
+
 
 class TownCar(Car):
-    def __init__(self, car_color, car_name, car_police=False, car_speed=0):
-        super().__init__(car_color, car_name, car_police, car_speed=0)
+    def __init__(self, car_color, car_name, mspeed, car_police=False, car_speed=0):
+        super().__init__(car_color, car_name, mspeed, car_police, car_speed=0)
 
     def show_speed(self):
         if self.speed <= 60:
@@ -146,14 +164,17 @@ class TownCar(Car):
         else:
             return print(f"Внимание!!! Превышение скорости автомобиля {self.name} на {self.speed - 60}!!!!")
 
+
 class SportCar(Car):
-    def __init__(self, car_color, car_name, car_police=False, car_speed=0):
-        super().__init__(car_color, car_name, car_police, car_speed=0)
+    def __init__(self, car_color, car_name, mspeed, car_police=False, car_speed=0):
+        super().__init__(car_color, car_name, mspeed, car_police, car_speed=0)
+
     pass
 
+
 class WorkCar(Car):
-    def __init__(self, car_color, car_name, car_police=False, car_speed=0):
-        super().__init__(car_color, car_name, car_police, car_speed=0)
+    def __init__(self, car_color, car_name, mspeed, car_police=False, car_speed=0):
+        super().__init__(car_color, car_name, mspeed, car_police, car_speed=0)
 
     def show_speed(self):
         if self.speed <= 40:
@@ -161,19 +182,57 @@ class WorkCar(Car):
         else:
             return print(f"Внимание!!! Превышение скорости автомобиля {self.name} на {self.speed - 40}!!!!")
 
+
 class PoliceCar(Car):
-    def __init__(self, car_color, car_name, car_police=True, car_speed=0):
-        super().__init__(car_color, car_name, car_police, car_speed=0)
+    def __init__(self, car_color, car_name, mspeed, car_police=True, car_speed=0):
+        super().__init__(car_color, car_name, mspeed, car_police, car_speed=0)
+
     pass
+
+
+# =============== 6.4 ==========================================================================================
+class Stationery:
+    def __init__(self, title):
+        self.title = title
+
+    def draw(self):
+        print(f"Название: {self.title}. Запуск отрисовки.")
+
+
+class Pen(Stationery):
+    def __init__(self, title):
+        super().__init__(title)
+
+    def draw(self):
+        print(f"Название: {self.title}. Пишем авторучкой!")
+
+
+class Pencil(Stationery):
+    def __init__(self, title):
+        super().__init__(title)
+
+    def draw(self):
+        print(f"Название: {self.title}. Пишем карандашом!")
+
+
+class Handle(Stationery):
+    def __init__(self, title):
+        super().__init__(title)
+
+    def draw(self):
+        print(f"Название: {self.title}. Пишем маркером!")
 
 
 if __name__ == "__main__":
     print("Модуль для практических заданий 6-го урока")
     color = {'red': 7, 'yellow': 2, 'green': 10}
     work_type = ['red', 'yellow', 'green', 'yellow']
+
+
     def run():
         for key in cycle(work_type):
             yield key, color.get(key)
+
 
     a = run()
     print(next(a))

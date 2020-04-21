@@ -9,16 +9,48 @@
 
 from lesson6 import TownCar, SportCar, PoliceCar, WorkCar
 
-town_car = TownCar('Черный', 'Mercedes-Benz C 200 4M Premium')
-sport_car = SportCar('Красный', 'Lamborghini aventador svj')
-police_car = PoliceCar('Белая', 'Лада Веста')
-work_car = WorkCar('Желтый', 'Тонар-7501')
+town_car = TownCar('Черный', 'Mercedes-Benz C 200 4M Premium', 200)
+sport_car = SportCar('Красный', 'Lamborghini aventador svj', 280)
+police_car = PoliceCar('Белая', 'Лада Веста', 180)
+work_car = WorkCar('Желтый', 'Тонар-7501', 60)
 
-town_car.go()
-town_car.go()
-town_car.accelerator()
-town_car.car_info()
-town_car.brake()
-town_car.brake()
-town_car.stop()
-town_car.car_info()
+print("Симулятор автотранспорта. Управление: Клавиши от 1 до 4 выбор машины,")
+print("e - запуск двигателя, q - остановка двигателя. a - поворот на лево, d - поворот на право")
+print("w - педаль газа, s - педаль тормоза. i - информация о машине")
+prototype = town_car
+while True:
+    action = input()
+    if action != '':
+        n = ord(action[0])
+    else:
+        continue
+    if n == 49:
+        prototype = town_car
+        prototype.car_info()
+    if n == 50:
+        prototype = sport_car
+        prototype.car_info()
+    if n == 51:
+        prototype = police_car
+        prototype.car_info()
+    if n == 52:
+        prototype = work_car
+        prototype.car_info()
+    if n == 119:
+        prototype.accelerator()
+    if n == 115:
+        prototype.brake()
+    if n == 97:
+        prototype.turn('лево')
+    if n == 100:
+        prototype.turn('право')
+    if n == 101:
+        prototype.go()
+    if n == 113:
+        prototype.stop()
+    if n == 105:
+        prototype.car_info()
+    if n == 111:
+        prototype.show_speed()
+    if n == 27:
+        break
