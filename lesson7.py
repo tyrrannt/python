@@ -1,3 +1,6 @@
+from abc import ABC, abstractmethod
+
+
 # ******************************************************* 7-1 ***********************************************************
 # 1. Реализовать класс Matrix (матрица). Обеспечить перегрузку конструктора класса (метод init()), который должен
 # принимать данные (список списков) для формирования матрицы.
@@ -41,10 +44,42 @@ class Matrix:
 # Реализовать общий подсчет расхода ткани. Проверить на практике полученные на этом уроке знания: реализовать
 # абстрактные классы для основных классов проекта, проверить на практике работу декоратора @property.
 
-class Clothes:
-    def __init__(self):
-        pass
-    
+class Clothes(ABC):
+    def __init__(self, name, v=0, h=0):
+        self.title = name
+        self.v = v
+        self.h = h
+
+    @property
+    def size(self):
+        return round(((self.v / 6.5) + 0.5), 3)
+
+    @property
+    def height(self):
+        return (2 * self.h) + 0.3
+
+    @abstractmethod
+    def calculation(self):
+        return f"Абстрактный метод класса"
+
+
+class Coat(Clothes):
+    def __init__(self, name, v):
+        self.title = name
+        self.v = v
+
+    def calculation(self):
+        return f"{self.title} - {self.size}"
+
+
+class Costume(Clothes):
+    def __init__(self, name, h):
+        self.title = name
+        self.h = h
+
+    def calculation(self):
+        return f"{self.title} - {self.height}"
+
 
 # ******************************************************* 7-3 ***********************************************************
 # 3. Реализовать программу работы с органическими клетками. Необходимо создать класс Клетка. В его конструкторе
@@ -67,18 +102,21 @@ class Clothes:
 
 
 class Cell:
-
     def __init__(self, count):
         self.count = count
 
     def __add__(self, other):
         pass
+
     def __sub__(self, other):
         pass
+
     def __mul__(self, other):
         pass
+
     def __truediv__(self, other):
         pass
+
     def make_order(self):
         pass
 
