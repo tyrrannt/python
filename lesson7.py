@@ -106,19 +106,34 @@ class Cell:
         self.count = count
 
     def __add__(self, other):
-        pass
+        return Cell(self.count + other.count)
 
     def __sub__(self, other):
-        pass
+        if self.count > other.count:
+            return Cell(self.count - other.count)
+        else:
+            print(f"Разность ячеек клеток меньше нуля")
 
     def __mul__(self, other):
-        pass
+        return Cell(self.count * other.count)
 
     def __truediv__(self, other):
-        pass
+        return Cell(round(self.count / other.count))
 
-    def make_order(self):
-        pass
+    def __str__(self):
+        return f"Количество клеток равно {self.count}"
+
+    def make_order(self, row, sym='*'):
+        try:
+            matrix = ''
+            for i in range(1, self.count+1):
+                if i % row == 0:
+                    matrix += sym + '\n'
+                else:
+                    matrix += sym
+            return matrix
+        except AttributeError:
+            return "Возникло исключение при выполнении вычитания, ввиду возникновени"
 
 
 if __name__ == '__main__':
