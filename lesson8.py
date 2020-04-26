@@ -1,4 +1,6 @@
 from json import dump, load
+
+
 # *************************************************  8.1  **************************************************************
 # 1. Реализовать класс «Дата», функция-конструктор которого должна принимать дату в виде строки формата «день-месяц-год»
 # В рамках класса реализовать два метода. Первый, с декоратором @classmethod, должен извлекать число, месяц, год и
@@ -149,6 +151,7 @@ class Warehouse84:
                 self.remains = self.counts(self.nomenclature)
         except FileNotFoundError:
             self.nomenclature = {}
+
     @staticmethod
     def counts(dicts):
         result = 0
@@ -174,6 +177,13 @@ class OfficeEquipment84:
 
     def __repr__(self):
         return self.nomenclature
+
+
+class Units:
+    division = {}
+
+    def __init__(self, title):
+        pass
 
 
 # *************************************************  8.5  **************************************************************
