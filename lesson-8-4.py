@@ -1,3 +1,5 @@
+#Задания 8.4 и 8.5 и 8.6 объединены в один
+
 from lesson8 import Warehouse84, OfficeEquipment84
 
 sklad = Warehouse84('Основной склад')
@@ -11,6 +13,8 @@ print(sklad)
 sklad.profit(items.nom, items.profit_wharehouse(), 5)
 print(sklad)
 sklad.cost(items.nom, items.profit_wharehouse(), 80)
+print(sklad)
+sklad.cost(items2.nom, items.profit_wharehouse(), 5)
 print(sklad)
 
 sklad.save('nums.json')
