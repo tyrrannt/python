@@ -106,51 +106,86 @@ class IsNum:
 # который будет базовым для классов-наследников. Эти классы — конкретные типы оргтехники (принтер, сканер, ксерокс).
 # В базовом классе определить параметры, общие для приведенных типов. В классах-наследниках реализовать параметры,
 # уникальные для каждого типа оргтехники.
+"""
+    def profit(self, nom, nom_dict, count):
+        if nom in self.nom.keys():
+            nom_list = self.nom.get(nom)
+            self.nom.update({nom: [nom_dict, nom_list[1] + count]})
+            self.remains += count
+        else:
+            self.nom.update({nom: [nom_dict, count]})
+            self.remains += count
+            
+    def cost(self, nom, nom_dict, count):
+        if nom in self.nom.keys():
+            nom_list = self.nom.get(nom)
+            if nom_list[1] >= count:
+                self.nom.update({nom: [nom_dict, nom_list[1] - count]}) \
+                    if (nom_list[1] - count) > 0 else self.nom.pop(nom)
+                self.remains -= count
+            else:
+                print(
+                    f"Остаток номенклатуры на складе {nom_list[1]} не хватает {count - nom_list[1]}.")
+        else:
+            print(f"Номенклатуры {nom.nom} на складе нет.")
+"""
+
+
+def profit_loc(nom, nom_dict, count, self_nom, self_remains):
+    if nom in self_nom.keys():
+        nom_list = self_nom.get(nom)
+        self_nom.update({nom: [nom_dict, nom_list[1] + count]})
+        self_remains += count
+    else:
+        self_nom.update({nom: [nom_dict, count]})
+        self_remains += count
+
+
+def cost_loc(nom, nom_dict, count, self_nom, self_remains):
+    if nom in self_nom.keys():
+        nom_list = self_nom.get(nom)
+        if nom_list[1] >= count:
+            self_nom.update({nom: [nom_dict, nom_list[1] - count]}) \
+                if (nom_list[1] - count) > 0 else self_nom.pop(nom)
+            self_remains -= count
+        else:
+            print(
+                f"Остаток номенклатуры на складе {nom_list[1]} не хватает {count - nom_list[1]}.")
+    else:
+        print(f"Номенклатуры {nom.nom} на складе нет.")
+
 
 class Warehouse84:
     remains = 0
-    nomenclature = {}
+    nom = {}
 
     def __init__(self, title):
         self.title = title
 
     def __str__(self):
+        result = ''
+        for i in self.nom:
+            result += f"{self.nom.get(i)[0]} в количестве {self.nom.get(i)[1]}\n"
         return f"{'*' * 35} \nНаименование склада: {self.title} \nОстатки на складе: {self.remains}" \
-               f" \n{self.nomenclature} \n{'*' * 35}"
+               f" \n{result} \n{'*' * 35}"
 
-    def profit(self, nomenclature, nomenclature_dict, count):
-        if nomenclature in self.nomenclature.keys():
-            nomenclature_list = self.nomenclature.get(nomenclature)
-            self.nomenclature.update({nomenclature: [nomenclature_dict, nomenclature_list[1] + count]})
-            self.remains += count
-        else:
-            self.nomenclature.update({nomenclature: [nomenclature_dict, count]})
-            self.remains += count
+    def profit(self, nom, nom_dict, count):
+        profit_loc(nom, nom_dict, count, self.nom, self.remains)
 
-    def cost(self, nomenclature, nomenclature_dict, count):
-        if nomenclature in self.nomenclature.keys():
-            nomenclature_list = self.nomenclature.get(nomenclature)
-            if nomenclature_list[1] >= count:
-                self.nomenclature.update({nomenclature: [nomenclature_dict, nomenclature_list[1] - count]}) \
-                    if (nomenclature_list[1] - count) > 0 else self.nomenclature.pop(nomenclature)
-                self.remains -= count
-            else:
-                print(
-                    f"Остаток номенклатуры на складе {nomenclature_list[1]} не хватает {count - nomenclature_list[1]}.")
-        else:
-            print(f"Номенклатуры {nomenclature.nomenclature} на складе нет.")
+    def cost(self, nom, nom_dict, count):
+        cost_loc(nom, nom_dict, count, self.nom, self.remains)
 
     def save(self, filename):
         with open(filename, 'w', encoding='UTF-8') as file_j:
-            dump(self.nomenclature, file_j)
+            dump(self.nom, file_j)
 
     def read(self, filename):
         try:
             with open(filename, 'r+', encoding='UTF-8') as file_j:
-                self.nomenclature = load(file_j)
-                self.remains = self.counts(self.nomenclature)
+                self.nom = load(file_j)
+                self.remains = self.counts(self.nom)
         except FileNotFoundError:
-            self.nomenclature = {}
+            self.nom = {}
 
     @staticmethod
     def counts(dicts):
@@ -161,8 +196,8 @@ class Warehouse84:
 
 
 class OfficeEquipment84:
-    def __init__(self, nomenclature, equip_type, equip_name, equip_article, equip_weight):
-        self.nomenclature = nomenclature
+    def __init__(self, nom, equip_type, equip_name, equip_article, equip_weight):
+        self.nom = nom
         self.equip_type = equip_type
         self.equip_name = equip_name
         self.equip_article = equip_article
@@ -176,14 +211,22 @@ class OfficeEquipment84:
                 'Вес': self.equip_weight, }
 
     def __repr__(self):
-        return self.nomenclature
+        return self.nom
 
 
 class Units:
+    remains = 0
     division = {}
+    nom = {}
 
     def __init__(self, title):
         self.title = title
+
+    def profit(self, nom, nom_dict, count):
+        profit_loc(nom, nom_dict, count, self.nom, self.remains)
+
+    def cost(self, nom, nom_dict, count):
+        cost_loc(nom, nom_dict, count, self.nom, self.remains)
 
 
 # *************************************************  8.5  **************************************************************
