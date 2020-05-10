@@ -12,7 +12,7 @@ __maintainer__ = "Vitalii R. Shakirov"
 __email__ = "shakirov.vitaliy@gmail.com"
 __status__ = "Production"
 
-import os, shutil
+import os
 
 path = 'C:\\Users'
 my_list = os.listdir(path)
