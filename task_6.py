@@ -16,14 +16,23 @@
 После реализации структуры, проверьте ее работу на различных сценариях
 """
 
+
 class tasks:
     count = 0
 
-    def __init__(self, name, status):
+    def __init__(self, source, name, status=False):
         tasks.count += 1
-        self.nane = name
+        self.id = tasks.count
+        self.source = source
+        self.name = name
         self.status = status
 
     def __str__(self):
         return f"Общее количество задач = {tasks.count}"
 
+    def get_task_info(self):
+        return f"\nID задачи: {self.id}\nНаименование задачи: {self.name}\nСостояние: {self.status}"
+
+
+a = tasks('HR', 'Приобретение МФУ')
+print(a.get_task_info())
