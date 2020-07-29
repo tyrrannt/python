@@ -15,3 +15,14 @@
 Введите число, которое требуется перевернуть: 123
 Перевернутое число: 321
 """
+
+
+def number_of_shifter(num):
+    """Простая рекурсия"""
+    if len(num) == 1:
+        return num[-1]
+    else:
+        return num[-1] + number_of_shifter(num[:-1])
+
+
+print(number_of_shifter(['5', '7', '7', '8']))
