@@ -9,3 +9,25 @@
 Для оценки Отлично в этом блоке необходимо выполнить 5 заданий из 7
 Для оценки Отлично в этом блоке необходимо выполнить 5 заданий из 7
 """
+from random import randint
+
+numbers = randint(0, 100)
+number_of_attempts = 10
+
+
+def guess_the_number(num):
+    if num == 0:
+        return f'Сожалею, вы проиграли. Было загаданно: {numbers}'
+    else:
+        users_number = int(input('Какое число загадал компьютер? - '))
+        if users_number == numbers:
+            return f'Поздравляю, вы выиграли за {num+1} ходов'
+        else:
+            if users_number < numbers:
+                print('Загаданное число больше!')
+            else:
+                print('Загаданное число меньше!')
+            return guess_the_number(num-1)
+
+
+print(guess_the_number(number_of_attempts))
