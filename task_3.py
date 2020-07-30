@@ -15,14 +15,24 @@
 Введите число, которое требуется перевернуть: 123
 Перевернутое число: 321
 """
+import sys
+
+sys.setrecursionlimit(10000)
 
 
-def number_of_shifter(num):
-    """Простая рекурсия"""
+def list_of_shifter(num):
     if len(num) == 1:
         return num[-1]
     else:
-        return num[-1] + number_of_shifter(num[:-1])
+        return num[-1] + list_of_shifter(num[:-1])
 
 
-print(number_of_shifter(['5', '7', '7', '8']))
+def number_of_shifter(num, summ):
+    if num <= 0:
+        return summ
+    else:
+        return number_of_shifter(num // 10, summ * 10 + num % 10)
+
+
+print(list_of_shifter(['3', '2', '1']))
+print(number_of_shifter(123456789, 0))
