@@ -28,6 +28,8 @@
 Вы вместо трехзначного числа ввели строку (((. Исправьтесь
 Введите операцию (+, -, *, / или 0 для выхода):
 """
+
+
 def get_sum_2():
     """Простая рекурсия"""
     users_input = input('Введите операцию (+, -, *, / или 0 для выхода): ')
@@ -39,11 +41,15 @@ def get_sum_2():
         if users_input == '+':
             print(f'Сумма чисел {first_number} и {second_number} = ' + str(float(first_number) + float(second_number)))
         elif users_input == '-':
-            print(f'Разность чисел {first_number} и {second_number} = ' + str(float(first_number) - float(second_number)))
+            print(
+                f'Разность чисел {first_number} и {second_number} = ' + str(float(first_number) - float(second_number)))
         elif users_input == '*':
-            print(f'Произведение чисел {first_number} на {second_number} = ' + str(float(first_number) * float(second_number)))
+            print(f'Произведение чисел {first_number} на {second_number} = ' + str(
+                float(first_number) * float(second_number)))
         elif users_input == '/':
-            print(f'Частное чисел {first_number} на {second_number} = ' + str(float(first_number) / float(second_number)))
+            print(
+                f'Частное чисел {first_number} на {second_number} = ' + str(float(first_number) / float(second_number)))
         return get_sum_2()
+
 
 get_sum_2()

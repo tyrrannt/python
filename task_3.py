@@ -20,14 +20,25 @@ import sys
 sys.setrecursionlimit(10000)
 
 
-def list_of_shifter(num):
-    if len(num) == 1:
-        return num[-1]
+def list_of_shifter(list_obj):
+    """
+    Переворачивает список
+    :param list_obj: исходный список
+    :return: Возвращает перевернутый список
+    """
+    if len(list_obj) == 1:
+        return list_obj[-1]
     else:
-        return num[-1] + list_of_shifter(num[:-1])
+        return list_obj[-1] + list_of_shifter(list_obj[:-1])
 
 
 def number_of_shifter(num, summ):
+    """
+    Переворачивает число, путем разделения числа на разрядные числа
+    :param num: исходное число
+    :param summ: перевернутое число
+    :return: Возвращает перевернутое число
+    """
     if num <= 0:
         return summ
     else:
@@ -35,4 +46,4 @@ def number_of_shifter(num, summ):
 
 
 print(list_of_shifter(['3', '2', '1']))
-print(number_of_shifter(123456789, 0))
+print(number_of_shifter(123006789, 0))
