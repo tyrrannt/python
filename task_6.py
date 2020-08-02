@@ -21,13 +21,13 @@ def guess_the_number(num):
     else:
         users_number = int(input('Какое число загадал компьютер? - '))
         if users_number == numbers:
-            return f'Поздравляю, вы выиграли за {num+1} ходов'
+            return f'Поздравляю, вы выиграли за {num + 1} ходов'
         else:
             if users_number < numbers:
                 print('Загаданное число больше!')
             else:
                 print('Загаданное число меньше!')
-            return guess_the_number(num-1)
+            return guess_the_number(num - 1)
 
 
 print(guess_the_number(number_of_attempts))
