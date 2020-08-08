@@ -35,7 +35,7 @@ def pass_input(passwd, data):
     Сохраняет пароль пользователя в словаре.
     :param passwd: введенный пароль пользователя
     :param data: хранилище паролей, словарь, ключем является соль, значением HASH сумма (соль + пароль)
-    :return: Возвращает информационную строку с результатом работы функции.
+    :return: Возвращает информационную строку с результатом работы функции. И выводит сгенерированный hash
     """
     import uuid
 
@@ -45,7 +45,7 @@ def pass_input(passwd, data):
         if pass_gen(keys, passwd) == data[keys]:
             return 'Пароль имеется в базе данных'
     data[salt] = pass_gen(salt, passwd)
-    return 'Пароль успешно записан'
+    return 'Пароль успешно записан. Hash = ' + data[salt]
 
 
 while True:
