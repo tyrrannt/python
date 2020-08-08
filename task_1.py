@@ -13,10 +13,13 @@
 И примените ее к двум своим функциям.
 """
 
-import random
-
 
 def benchmark(func):
+    """
+    Декоратор функция. Для подсчета времени выполнения функций
+    :param func: Передаваемая функция
+    :return: Время выполнения функции
+    """
     import time
 
     def wrapper(args):
@@ -41,10 +44,10 @@ def list_obj(elements):
 def dict_obj(elements):
     origin_dict = {}
     for i in range(0, elements):
-        origin_dict[i] = ( i ** elements)
+        origin_dict[i] = (i ** elements)
     return origin_dict
 
 
-count = int(input('Введите количество элементов'))
-result = list_obj(count)
-result = dict_obj(count)
+count = int(input('Введите количество элементов: '))
+list_obj(count)
+dict_obj(count)

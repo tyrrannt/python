@@ -17,17 +17,43 @@
 """
 database = {}
 
-def pass_input(database):
-    import hashlib, uuid
 
-    value = input('Введите пароль: ')
+def pass_gen(salt, passwd):
+    """
+    Генерирует hash сумму по двум аргументам
+    :param salt: соль = строка UUID, универсальный уникальный идентификатор
+    :param passwd: введенный пароль пользователя
+    :return: возвращает HASH сумму (соль + пароль)
+    """
+    import hashlib
+    byte_password = str.encode(passwd, encoding='utf-8')
+    return hashlib.sha256(byte_password + salt.encode(encoding='utf-8')).hexdigest()
+
+
+def pass_input(passwd, data):
+    """
+    Сохраняет пароль пользователя в словаре.
+    :param passwd: введенный пароль пользователя
+    :param data: хранилище паролей, словарь, ключем является соль, значением HASH сумма (соль + пароль)
+    :return: Возвращает информационную строку с результатом работы функции.
+    """
+    import uuid
+
     salt = uuid.uuid4().hex
-    byte_password = str.encode(value, encoding='utf-8')
-    sha = hashlib.sha256(byte_password+salt.encode( encoding='utf-8')).hexdigest()
-    if sha in database.values():
-        print('Пароль имеется в базе данных')
-    else:
-        database[salt] = sha
-    return database
 
-print(pass_input(database))  # '422fbfbc67fe17c86642c5eaaa48f8b670cbed1b'
+    for keys in data:
+        if pass_gen(keys, passwd) == data[keys]:
+            return 'Пароль имеется в базе данных'
+    data[salt] = pass_gen(salt, passwd)
+    return 'Пароль успешно записан'
+
+
+while True:
+    print('Для выхода введите q, для просмотра паролей в словаре - p')
+    value = input('Введите пароль: ')
+    if value == 'q':
+        break
+    if value == 'p':
+        print(database)
+        continue
+    print(pass_input(value, database))
