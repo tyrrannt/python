@@ -9,9 +9,9 @@
 Попытайтесь написать третью версию, которая будет самой быстрой.
 Сделайте замеры и опишите, получилось ли у вас ускорить задачу.
 """
-
+from random import randint
 array = [1, 3, 1, 3, 4, 5, 1]
-
+array = [i*randint(1, 100) for i in range(50)]
 
 def func_1():
     m = 0
@@ -36,6 +36,28 @@ def func_2():
     return f'Чаще всего встречается число {elem}, ' \
            f'оно появилось в массиве {max_2} раз(а)'
 
+# Прям быстрее не получается, но результат лучше чем дает вторая функция
+def func_3():
+    max_3 = 0
+    for i in array:
+        if max_3 < array.count(i):
+            max_3 = array.count(i)
+            elem = i
+    return f'Чаще всего встречается число {elem}, ' \
+           f'оно появилось в массиве {max_3} раз(а)'
 
-print(func_1())
-print(func_2())
+
+if __name__ == '__main__':
+    from timeit import Timer
+    print(func_1())
+    print(func_2())
+    print(func_3())
+
+    test1 = Timer(lambda: func_1())
+    test2 = Timer(lambda: func_2())
+    test3 = Timer(lambda: func_3())
+
+    print(test1.timeit(50000))
+    print(test2.timeit(50000))
+    print(test3.timeit(50000))
+
