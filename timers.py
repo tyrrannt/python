@@ -22,7 +22,3 @@ def timers(func):
         print(f"Время на выполнение {stop - start}")
     return origin_func
 
-dict = {'321': 332211, '123': 112233}
-for keys in dict:
-    print(keys)
-    print(dict[keys])
