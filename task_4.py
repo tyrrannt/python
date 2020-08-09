@@ -57,7 +57,7 @@ if __name__ == '__main__':
     test2 = Timer(lambda: func_2())
     test3 = Timer(lambda: func_3())
 
-    print(test1.timeit(50000))
-    print(test2.timeit(50000))
-    print(test3.timeit(50000))
+    print(test1.timeit(10000))
+    print(test2.timeit(10000))
+    print(test3.timeit(10000))
 
