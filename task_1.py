@@ -26,8 +26,24 @@
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
 from collections import namedtuple
+from collections import Counter
 
 count = int(input('Введите количество предприятий для расчета прибыли: '))
-for counter in range(count-1):
+org_tuple = namedtuple('Company', 'org_name profit')
+lst_obj = []
+for counter in range(count):
     name = input('Введите название предприятия: ')
-    
+    cost = input('Через пробел введите прибыль данного предприятия за каждый квартал(Всего 4 квартала):')
+    lst_obj.append(org_tuple(org_name=name, profit=cost.split(' ')))
+profit_sum = [0]*count
+for counter in range(len(lst_obj)):
+    profit_sum[counter] = ([int(i) for i in lst_obj[counter].profit])
+middle = []
+for i in profit_sum:
+    middle += i
+
+middle_sum = sum(middle) // count
+print(middle_sum)
+print(f'Средняя годовая прибыль всех предприятий: {middle_sum}\nПредприятия, с прибылью выше среднего значения: '
+      f'{[lst_obj[i].org_name for i in range(0, count) if sum(profit_sum[i])>middle_sum]}\n'
+      f'Предприятия, с прибылью ниже среднего значения: {[lst_obj[i].org_name for i in range(0, count) if sum(profit_sum[i])<middle_sum]}')
