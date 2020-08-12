@@ -25,3 +25,9 @@
 
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
+from collections import namedtuple
+
+count = int(input('Введите количество предприятий для расчета прибыли: '))
+for counter in range(count-1):
+    name = input('Введите название предприятия: ')
+    
