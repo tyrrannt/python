@@ -11,3 +11,20 @@
 Также попробуйте решить задачу вообще без collections и применить только ваши знания по ООП
 (в частности по перегрузке методов)
 """
+from collections import defaultdict
+from collections import Counter
+
+
+list_obj = [list(Counter(input('Введите первое число: ')).elements()),
+            list(Counter(input('Введите второе число: ')).elements())]
+
+dict_obj = defaultdict(list)
+dict_obj['first'] = list_obj[0]
+dict_obj['second'] = list_obj[1]
+dict_obj['summ'] = list(Counter(hex(int(''.join(dict_obj['first']),16) + int(''.join(dict_obj['second']), 16))).elements())[2:]
+dict_obj['compositions'] = list(Counter(hex(int(''.join(dict_obj['first']),16) * int(''.join(dict_obj['second']), 16))).elements())[2:]
+print(dict_obj['summ'], dict_obj['compositions'])
+
+
+
+

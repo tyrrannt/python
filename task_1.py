@@ -26,7 +26,7 @@
 Предприятия, с прибылью ниже среднего значения: Копыта
 """
 from collections import namedtuple
-from collections import Counter
+
 
 count = int(input('Введите количество предприятий для расчета прибыли: '))
 org_tuple = namedtuple('Company', 'org_name profit')
