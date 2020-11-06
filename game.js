@@ -1,6 +1,29 @@
+
+//Добавил функцию проверяющую границы заданные в config
+function checkBorder(valueConfig, valueItem, mathOper) {
+
+    switch (mathOper) {
+        case '++':
+            valueItem++;
+            break;
+        case '--':
+            valueItem--;
+            break;
+    }
+
+    if (valueItem == -1) {
+        return valueConfig;
+    }
+    if (valueItem == valueConfig) {
+        return 0;
+    }
+
+    return valueItem;
+}
+
 const config = {
     rowCount: 10,
-    colCount: 10,
+    colCount: 5,
     startPositionX: 0,
     startPositionY: 0,
 };
@@ -17,16 +40,16 @@ const player = {
     move(direction) {
         switch (direction) {
             case 2:
-                this.y++;
+                this.y = checkBorder(config.rowCount, this.y, '++');
                 break;
             case 4:
-                this.x--;
+                this.x = checkBorder(config.colCount, this.x, '--');
                 break;
             case 6:
-                this.x++;
+                this.x = checkBorder(config.colCount, this.x, '++');
                 break;
             case 8:
-                this.y--;
+                this.y = checkBorder(config.rowCount, this.y, '--');
                 break;
         }
     },
