@@ -23,7 +23,7 @@ function checkBorder(valueConfig, valueItem, mathOper) {
 
 const config = {
     rowCount: 10,
-    colCount: 5,
+    colCount: 10,
     startPositionX: 0,
     startPositionY: 0,
 };
