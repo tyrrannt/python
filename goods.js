@@ -36,22 +36,14 @@ const goods = {
         let elem = null;
         elem = document.querySelectorAll(".product");
         elem.forEach(nodes => { nodes.remove() });
-        this.init()
+        this.init();
 
     },
 
     basketFill() {
-        let count;
         for (let i = 0; i < this.products.length; i++) {
-            count = parseInt(Math.random(100) * 10);
-            this.products[i].productQuantity = count;
+            this.products[i].productQuantity = parseInt(Math.random(100) * 10);
         }
-    },
-
-    getCartPrice() {
-        return this.products.reduce(function (price, good) {
-            return price + good.price * good.quantity;
-        }, 0);
     },
 
     basketCost() {
