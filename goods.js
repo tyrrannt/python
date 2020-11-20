@@ -13,6 +13,7 @@ const cartItem = {
 const goods = {
     goodsItemCard: null,
     cartItem,
+    buttonRefresh: null,
     products: [
         {
             productName: 'Apple',
@@ -30,8 +31,13 @@ const goods = {
             productQuantity: 0
         },
     ],
-    buttonCreate() {
 
+    buttonCreate() {
+        let elem = document.querySelector(".products-div");
+        while (elem.firstChild) {
+            elem.firstChild.remove()
+        }
+        this.init()
 
     },
 
@@ -55,7 +61,10 @@ const goods = {
 
     init() {
         this.basketFill();
+        this.buttonRefresh = document.querySelector('.refresh');
+        this.buttonRefresh.addEventListener('click', this.buttonCreate.bind(this));
         this.goodsItemCard = document.querySelector('.products-div');
+
         this.render();
     },
 
