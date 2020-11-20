@@ -33,10 +33,9 @@ const goods = {
     ],
 
     buttonCreate() {
-        let elem = document.querySelector(".products-div");
-        while (elem.firstChild) {
-            elem.firstChild.remove()
-        }
+        let elem = null;
+        elem = document.querySelectorAll(".product");
+        elem.forEach(nodes => { nodes.remove() });
         this.init()
 
     },
@@ -73,7 +72,7 @@ const goods = {
             this.products.forEach(product => {
                 this.goodsItemCard.insertAdjacentHTML('beforeend', this.cartItem.render(product));
             });
-            this.goodsItemCard.insertAdjacentHTML('beforeend', `В корзине ${this.products.length} позиций(а) стоимостью ${this.basketCost()}`);
+            this.goodsItemCard.insertAdjacentHTML('afterend', `<div class="product">В корзине ${this.products.length} позиций(а) стоимостью ${this.basketCost()}</div>`);
         } else {
             this.goodsItemCard.textContent = 'Корзина пуста';
         }
