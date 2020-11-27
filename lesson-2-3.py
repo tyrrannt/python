@@ -3,11 +3,12 @@
 my_list = ['зима', 'весна', 'лето', 'осень']
 my_dict = {0: 'зима', 1: 'весна', 2: 'лето', 3: 'осень'}
 while True:
-    season = int(input("Введите номер месяца (в диапазоне от 1 до 12): ")) - 3
+    season = int(input("Введите номер месяца (в диапазоне от 1 до 12): "))
     if 0 < season < 13:
         break
     else:
         print("Введены некорректные данные. Ознакомьтесь с условием.")
         continue
+season -= 3
 print("Cписок: ", my_list[(season // 3)+1 if 0 <= (season//3) < 3 else 0])
 print("Словарь: ", my_dict.get((season // 3)+1 if 0 <= (season//3) < 3 else 0))
